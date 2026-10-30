@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { createContext, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -86,8 +86,12 @@ const router = createBrowserRouter([
   }
 ])
 
+import { contexto } from "./context/session.context"
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <contexto.Provider value={ { nombre: "Homero" } } >
+      <RouterProvider router={router} />
+    </contexto.Provider>
   </StrictMode>,
 )

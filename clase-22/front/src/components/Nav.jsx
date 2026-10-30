@@ -1,9 +1,14 @@
+import { useContext } from "react";
 import { Link } from "react-router";
+import { contexto } from "../context/session.context";
 
 export default function Nav() {
 
     const usuario = JSON.parse(localStorage.getItem("usuario"))
 
+    const nombre = useContext(contexto)
+    console.log(nombre)
+    
     return (
         <nav className="navbar navbar-expand-md bg-body-tertiary">
             <div className="container-fluid">

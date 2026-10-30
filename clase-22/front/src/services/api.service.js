@@ -1,5 +1,5 @@
 export function call(uri, method = "GET", body = undefined) {
-    const url = "http://localhost:2026/api"
+    const url =  import.meta.env.VITE_API_URL
     return fetch(url + uri, {
         method: method,
         headers: {
